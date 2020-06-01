@@ -34,7 +34,8 @@ alinhamento, cor, ou seja a maneira que ele é visto pelo HTML
 #page-home{
     height: 100vh;
     background: url('../assets/home-background.svg') no-repeat;
-    background-position: 35vw bottom;
+    background-position: right bottom;
+  background-size: 50% auto;
 }
 
 #page-home .content{
@@ -132,9 +133,9 @@ alinhamento, cor, ou seja a maneira que ele é visto pelo HTML
     text-align: center;
 }
 
-@media( max-with: 900px) {
+@media ( max-width: 900px) {
     #page-home{
-        background-position-x: 70vw;
+        background-position-x: 90vw;
 
     }
     #page-home content {
