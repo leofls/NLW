@@ -38,6 +38,7 @@ alinhamento, cor, ou seja a maneira que ele é visto pelo HTML
 
 #page-home header a span{
     display: flex;
+    margin-right: 10px;
     background-image: url('../assets/log-in.svg');
     width: 20px;
     height: 20px;
@@ -83,6 +84,7 @@ alinhamento, cor, ou seja a maneira que ele é visto pelo HTML
     width: 72px;
     height: 72px;
 
+    
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     
