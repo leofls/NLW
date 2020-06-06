@@ -14,39 +14,38 @@
 {% block content %}
     {% include "partials/page-header.html" %}
     <main>
-        <h3>
-            <strong>2 pontos
-            </strong>
-            encontrados
-        </h3>
-        <div class="cards">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1567393528677-d6adae7d4a0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60" alt="colectoria">
-                <h1>Colectoria</h1>
-                <h3>Resíduos eletronicos, Lâmpadas</h3>
-                <p>
-                    Rio do Sul, Santa Catarina
-                    <br>
-                    Guilherme Gemballa Jarsim, america
-                    <br>
-                    Numero 160
-                </p>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=801&q=80" alt="colectoria">
-                <h1>Paper sider</h1>
-                <h3>Papeis e papelão</h3>
-                <p>
-                    Rio do Sul, Santa Catarina
-                    <br>
-                    Guilherme Gemballa Jarsim, america
-                    <br>
-                    Numero 160
-                </p>
-            </div>
-        </div>
-    </main>
-{% endblock content %}
+        {% if total > 0 %}
+            <h3>            
+                <strong>{{total}}
+                    pontos
+                </strong>
+                encontrados
+            </h3>
+            <div class="cards">
 
-{% block scripts %}
-{% endblock scripts %}
+                {% for place in places %}
+                    <div class="card">
+                        <img src=" {{ place.image }} " alt="{{ place.nome }} ">
+                        <h1>{{ place.name }}</h1>
+                        <h3>{{ place.items }}</h3>
+                        <p>
+                            {{ place.state }},
+                            {{ place.city }}
+                            <br>
+                            {{ place.address }}
+                            <br>
+                            {{ place.address2 }}
+                        </p>
+                    </div>
+                {% endfor %}
+
+            {% else%}
+
+            <h3><strong>Nenum</strong> item não encontrados</h3>
+
+            {% endif %}
+
+        </main>
+    {% endblock content %}
+
+    {% block scripts %}{% endblock scripts %}
